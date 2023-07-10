@@ -30,7 +30,7 @@ def home():
 def add_cafe():
     form = CafeForm()
     if form.validate_on_submit():
-        with open("cafe-data.csv", mode="a") as csv_file:
+        with open("cafe-data.csv", mode="a", newline='', encoding='utf-8') as csv_file:
             csv_file.write(f"\n{form.cafe.data},"
                            f"{form.location.data},"
                            f"{form.open.data},"
